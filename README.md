@@ -86,7 +86,3 @@ VITE_API_URL=http://localhost:5000/api
 
 ### 📖 License
 MIT — free to use, modify, and share.  
-
----
-
-Would you like me to also create a **one-page cheat sheet** version (just commands + endpoints) so you can use it as a quick reference while coding?
