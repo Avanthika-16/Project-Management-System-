@@ -1,88 +1,35 @@
-## 🚀 ProjectFlow – Project Management System
-A modern app to help teams and individuals organize projects and tasks quickly and easily.
+# ProjectFlow — Project Management System
 
-### 🔧 Tech Stack
-- **Frontend:** React, Vite, Tailwind CSS, React Router  
-- **Backend:** Node.js, Express.js, JWT, bcrypt  
-- **Database:** MySQL with Sequelize ORM  
-- **Extras:** Charts (Recharts), Forms (React Hook Form), API Docs (Swagger), Docker for deployment  
+ProjectFlow is a zero-dependency, highly interactive Single-Page Application (SPA) built for managing projects and tracking tasks. Featuring a premium dark-mode interface, client-side authentication, a comprehensive metrics dashboard, and full CRUD capability, the app serves as a robust prototype for project tracking.
 
-### ✨ Features
-- **Authentication:** Register, login, logout with secure JWT tokens  
-- **Projects:** Create, view, edit, delete projects with status tracking  
-- **Tasks:** Full CRUD with priority levels and status updates  
-- **Dashboard:** Real-time stats, charts, and recent activity  
-- **Search & Filter:** Find projects/tasks by name, status, or priority  
-- **Pagination:** Server-side pagination for large datasets  
-- **Responsive:** Works on desktop, tablet, and mobile  
-- **Secure:** Password hashing, rate limiting, input validation  
+---
 
-### 📂 Project Structure
-```
-ProjectFlow/
-├── client/   # React frontend
-│   ├── src/
-│   │   ├── api/        # API services
-│   │   ├── components/ # UI components
-│   │   ├── context/    # Auth, Toast
-│   │   ├── hooks/      # Custom hooks
-│   │   ├── pages/      # Page components
-│   │   ├── routes/     # Router config
-│   │   └── utils/      # Helpers
-├── server/   # Express backend
-│   ├── config/      # DB config
-│   ├── controllers/ # Route handlers
-│   ├── middleware/  # Auth, validation
-│   ├── models/      # Sequelize models
-│   ├── routes/      # API routes
-│   ├── validators/  # Input rules
-│   ├── swagger/     # API docs
-├── docker-compose.yml
-└── README.md
-```
+## 🚀 Key Features
 
-### ⚙️ Getting Started
-**Option 1: Docker (easy way)**  
-1. Clone repo  
-2. Run `docker-compose up --build`  
-3. Access:  
-   - Frontend → `http://localhost:3000`  
-   - Backend → `http://localhost:5000`  
-   - API Docs → `http://localhost:5000/api-docs`  
+*   **Simulated Client-Side Authentication**: Registration, login, and secure-state routing guarded by session verification.
+*   **Interactive Metrics Dashboard**: Tracks total projects, active statuses, task counts, and completion percentages. Displays recent projects and tasks.
+*   **Project Management (CRUD)**: Create, read, update, and delete projects. Dynamic progress bars automatically calculate completion rates based on nested tasks.
+*   **Task Management (CRUD)**: Assign status, priority level, and dates to tasks. Toggle task completion instantly using list checkboxes.
+*   **Global Search & Advanced Filtering**: Search and narrow down items by status, priority, or ownership.
+*   **Dynamic UX**: Built-in toast notifications (success, warning, error), modal forms, page-load transition animations, and a responsive mobile sidebar.
+*   **Zero Dependencies**: Written completely in Vanilla HTML5, CSS3, and modern ES6+ JavaScript. No node modules or local server needed.
 
-**Option 2: Run locally**  
-- Create MySQL database: `CREATE DATABASE projectflow;`  
-- Backend: `cd server && npm install && cp .env.example .env && npm run dev`  
-- Frontend: `cd client && npm install && cp .env.example .env && npm run dev`  
+---
 
-### 🔑 Environment Variables
-**Backend (.env):**
-```
-PORT=5000
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=projectflow
-DB_USER=root
-DB_PASSWORD=your_password
-JWT_SECRET=your-secret
-CLIENT_URL=http://localhost:5173
-```
+## 🛠️ Tech Stack
 
-**Frontend (.env):**
-```
-VITE_API_URL=http://localhost:5000/api
-```
+*   **Structure**: HTML5 Semantic markup (App Shell)
+*   **Styling**: CSS Custom Properties (Variables), Flexbox/Grid, Glassmorphism, animations
+*   **Logic**: ES6+ JavaScript modules (Router, Auth Manager, Storage ORM, UI Components)
+*   **Database & Session Management**: Browser `localStorage`
 
-### 📡 API Endpoints
-- **Auth:** `/api/auth/register`, `/api/auth/login`, `/api/auth/logout`, `/api/auth/me`  
-- **Projects:** `/api/projects` (CRUD)  
-- **Tasks:** `/api/tasks` (CRUD, filters, pagination)  
-- **Dashboard:** `/api/dashboard/stats`  
+---
 
-### 🗄 Database Schema
-- **User → Projects → Tasks**  
-- One user can have many projects, and each project can have many tasks.  
-- Cascade delete ensures linked data is cleaned up automatically.  
+## 📁 Project Structure
 
-### 📖 License
-MIT — free to use, modify, and share.  
+```text
+project-management-system/
+├── index.html     # Main app skeleton (header, sidebar, modal, toast containers)
+├── index.css      # Custom dark-theme styling, transitions, responsive layouts
+├── app.js         # Single-Page router, business logic, storage operations
+└── README.md      # Documentation (this file)
